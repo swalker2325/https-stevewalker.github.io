@@ -1,0 +1,98 @@
+from reportlab.lib.pagesizes import LETTER
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib import colors
+
+# Create the PDF file
+resume_filename = "/mnt/data/Steve_Walker_Resume.pdf"
+doc = SimpleDocTemplate(resume_filename, pagesize=LETTER,
+                        rightMargin=0.5*inch, leftMargin=0.5*inch,
+                        topMargin=0.5*inch, bottomMargin=0.5*inch)
+
+styles = getSampleStyleSheet()
+styles.add(ParagraphStyle(name='Heading', fontSize=12, leading=14, spaceAfter=6, textColor=colors.HexColor("#e2b714"), fontName='Helvetica-Bold'))
+styles.add(ParagraphStyle(name='Body', fontSize=10.5, leading=13, spaceAfter=4, textColor=colors.black))
+
+content = []
+
+# Header
+content.append(Paragraph("<b>Steve Walker</b>", styles['Title']))
+content.append(Paragraph("AI Product Strategist (in training) | Business Development & Technology Integration Specialist", styles['Body']))
+content.append(Paragraph("Arlington, VA | stevewalker@email.com | linkedin.com/in/steve-walker-b30a908a | swalker2325.github.io", styles['Body']))
+content.append(Spacer(1, 12))
+
+# Summary
+content.append(Paragraph("Professional Summary", styles['Heading']))
+summary_text = ("Versatile business professional with 10+ years of experience across finance, technology, and automotive industries. "
+                "Proven record of optimizing performance, leading sales operations, and delivering client-centered solutions that blend strategy with technology. "
+                "Currently pivoting into AI Product Strategy and Automation, leveraging a strong foundation in business analytics, CRM systems, and process design.")
+content.append(Paragraph(summary_text, styles['Body']))
+content.append(Spacer(1, 12))
+
+# Experience
+content.append(Paragraph("Experience", styles['Heading']))
+
+experience_data = [
+    ("Brand Ambassador — Porsche Arlington", "Jun 2025 – Present | Arlington, VA",
+     "Represent the Porsche brand experience, aligning luxury service standards with client-focused relationship building. "
+     "Leverage CRM systems and data insights to identify repeat and high-value clients. "
+     "Collaborate with marketing and leadership to improve lead-to-delivery workflow efficiency."),
+
+    ("Sales Representative — Waldorf Honda", "Jan 2020 – Jun 2025 | Waldorf, MD",
+     "Delivered top-tier performance in sales and customer satisfaction for a high-volume, family-owned dealership. "
+     "Introduced digital marketing and CRM automation to increase qualified leads and improve customer response times. "
+     "Coached junior reps and built repeat-business portfolio through strong communication and solution-based selling."),
+
+    ("Mortgage Banker — Quicken Loans", "Mar 2015 – Oct 2019 | Detroit, MI",
+     "Closed over $55M in loan volume while maintaining a 4.5/5 client satisfaction rating. "
+     "Trained and mentored loan officers on compliance and pipeline management. "
+     "Consulted clients on credit and financial strategies ranging from $25K–$4M."),
+
+    ("Business Analyst Intern — Quicken Loans", "Jun 2014 – Aug 2014 | Detroit, MI",
+     "Supported transition from legacy systems to upgraded enterprise software suites. "
+     "Developed SQL stored procedures, built SSRS reports, and documented software requirements under Agile and Waterfall frameworks.")
+]
+
+for role, dates, desc in experience_data:
+    content.append(Paragraph(f"<b>{role}</b>", styles['Body']))
+    content.append(Paragraph(dates, styles['Body']))
+    content.append(Paragraph(desc, styles['Body']))
+    content.append(Spacer(1, 6))
+
+# Education
+content.append(Spacer(1, 6))
+content.append(Paragraph("Education", styles['Heading']))
+content.append(Paragraph("<b>Lynn University — Boca Raton, FL</b>", styles['Body']))
+content.append(Paragraph("Bachelor of Business Administration (B.B.A.), Business Administration and Management | 2010 – 2014", styles['Body']))
+
+# Certifications
+content.append(Spacer(1, 6))
+content.append(Paragraph("Certifications", styles['Heading']))
+certs = [
+    "IBM Generative AI: Introduction and Applications (Issued Oct 2025)",
+    "IBM Generative AI: Prompt Engineering Basics (Issued Oct 2025)",
+    "IBM Introduction to Artificial Intelligence (AI) (Issued Oct 2025)",
+    "IBM Generative AI Engineering Professional Certificate (Expected Jan 2025)"
+]
+for cert in certs:
+    content.append(Paragraph(f"• {cert}", styles['Body']))
+
+# Skills
+content.append(Spacer(1, 6))
+content.append(Paragraph("Core Skills", styles['Heading']))
+skills_text = ("AI & Tech Literacy: Generative AI, Prompt Engineering, Automation Strategy, SQL Fundamentals, Data Analysis<br/>"
+               "Business Strategy: Product Development, Market Research, Process Optimization, Business Intelligence<br/>"
+               "Sales & CRM Expertise: Customer Relationship Management, Consultative Selling, Lead Generation, Client Retention<br/>"
+               "Communication & Leadership: Public Speaking, Coaching, Cross-Functional Collaboration, Stakeholder Management<br/>"
+               "Tools: Microsoft Office Suite, Google Workspace, CRM Platforms, SSRS, WordPress, Social Media Marketing")
+content.append(Paragraph(skills_text, styles['Body']))
+
+# Project
+content.append(Spacer(1, 6))
+content.append(Paragraph("Projects", styles['Heading']))
+content.append(Paragraph("<b>AI Product Assistant (In Progress)</b> — Portfolio Project", styles['Body']))
+content.append(Paragraph("Developing a generative-AI powered assistant that converts plain-language business prompts into structured product briefs and strategies.", styles['Body']))
+
+doc.build(content)
+resume_filename
