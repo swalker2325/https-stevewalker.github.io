@@ -1,85 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Product Assistant | Steve Walker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Product Assistant</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#0e0e0e; color:#f5f5f5; margin:0; padding:40px; }
-    a { color:#e2b714; text-decoration:none; } a:hover { text-decoration:underline; }
-    h1, h2 { color:#e2b714; }
-    .card { background:#161616; padding:24px; border-radius:12px; margin:16px 0; }
-    .muted { color:#bcbcbc; }
-    .btn { display:inline-block; padding:10px 14px; border-radius:8px; background:#222; border:1px solid #333; cursor:pointer; }
-    .grid { display:grid; gap:16px; }
+    body { font-family: Arial, sans-serif; background-color: #0e0e0e; color: #f5f5f5; padding: 40px; }
+    input, button { padding: 10px; font-size: 1em; border-radius: 6px; border: none; }
+    input { width: 60%; }
+    button { background-color: #e2b714; color: #0e0e0e; margin-left: 10px; cursor: pointer; }
+    pre { background-color: #1a1a1a; padding: 20px; border-radius: 8px; margin-top: 20px; white-space: pre-wrap; word-wrap: break-word; }
   </style>
 </head>
 <body>
-  <a href="/">&larr; Back to portfolio</a>
   <h1>AI Product Assistant</h1>
-  <p class="muted">A lightweight assistant that turns short prompts into structured product ideas and task breakdowns.</p>
-
-  <div class="grid">
-    <div class="card">
-      <h2>Objective</h2>
-      <p>Showcase practical AI product thinking: prompt design, output structure, and business usefulness without heavy code.</p>
-    </div>
-
-    <div class="card">
-      <h2>Features (v1)</h2>
-      <ul>
-        <li>Takes a short user prompt</li>
-        <li>Returns a structured brief: problem, users, value, risks, and next actions</li>
-        <li>Clean, copyable output</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Live Demo (stub)</h2>
-      <p class="muted">This is a front-end mock we’ll wire to an API later.</p>
-      <textarea id="prompt" rows="4" style="width:100%;"></textarea>
-      <div style="margin-top:10px;">
-        <button class="btn" onclick="runDemo()">Generate Brief</button>
-      </div>
-      <pre id="out" style="white-space:pre-wrap; margin-top:12px;"></pre>
-    </div>
-
-    <div class="card">
-      <h2>Status</h2>
-      <p>Work in progress. API wiring and prompt library coming next.</p>
-    </div>
-  </div>
+  <p>Enter an idea and watch it turn into a structured product brief.</p>
+  <input id="prompt" placeholder="e.g., AI tool for luxury car sales"/>
+  <button onclick="runDemo()">Generate Brief</button>
+  <pre id="out"></pre>
 
   <script>
-    function runDemo(){
-      const p = document.getElementById('prompt').value.trim() || 'AI for post-sale follow-ups in automotive';
-      const template = `
+  const API_URL = "https://a8ad6bfd-0b9e-4c04-b86b-ee6f5673b396-00-3j9vlmht90fsh.picard.replit.dev/generate";
+
+  function mdEscape(s){return (s||"").replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+
+  async function runDemo(){
+    const p = document.getElementById('prompt').value.trim() || 'AI for post-sale follow-ups in automotive'
+    const out = document.getElementById('out')
+    out.textContent = 'Thinking...'
+
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ prompt: p })
+      })
+      if(!res.ok){ throw new Error(`HTTP ${res.status}`) }
+      const data = await res.json()
+
+      const b = data.brief || {}
+      const list = arr => (arr||[]).map(x=>`- ${x}`).join('\n')
+
+      out.textContent = `
 Product Brief
 -------------
-User prompt: ${p}
+User prompt: ${mdEscape(data.prompt || p)}
 
 Problem
-- Repetitive manual follow-ups reduce consistency and waste time.
+${list(b.problem)}
 
 Users
-- Sales reps, BDC agents, managers tracking conversion.
+${list(b.users)}
 
 Solution (v1)
-- Assistant generates tailored follow-ups and next-best-actions from CRM notes.
+${list(b.solution)}
 
 Value
-- Higher response rates, faster cycles, clearer next steps.
+${list(b.value)}
 
 Risks
-- Tone mismatches, hallucinations, poor CRM hygiene.
+${list(b.risks)}
 
 Next Actions
-- Define guardrails & tone
-- Add templated prompts per scenario
-- A/B test copy on 50 leads
-      `.trim();
-      document.getElementById('out').textContent = template;
+${list(b.next_actions)}
+      `.trim()
+    } catch(err){
+      out.textContent = 'Error: ' + err.message
     }
+  }
   </script>
 </body>
 </html>
