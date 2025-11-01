@@ -1,98 +1,93 @@
-from reportlab.lib.pagesizes import LETTER
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import inch
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
-from reportlab.lib import colors
+%PDF-1.4
+%���� ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 9 0 R /MediaBox [ 0 0 612 792 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
 
-# Create the PDF file
-resume_filename = "/mnt/data/Steve_Walker_Resume.pdf"
-doc = SimpleDocTemplate(resume_filename, pagesize=LETTER,
-                        rightMargin=0.5*inch, leftMargin=0.5*inch,
-                        topMargin=0.5*inch, bottomMargin=0.5*inch)
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 10 0 R /MediaBox [ 0 0 612 792 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
 
-styles = getSampleStyleSheet()
-styles.add(ParagraphStyle(name='Heading', fontSize=12, leading=14, spaceAfter=6, textColor=colors.HexColor("#e2b714"), fontName='Helvetica-Bold'))
-styles.add(ParagraphStyle(name='Body', fontSize=10.5, leading=13, spaceAfter=4, textColor=colors.black))
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/PageMode /UseNone /Pages 8 0 R /Type /Catalog
+>>
+endobj
+7 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20251101203645+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20251101203645+00'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+8 0 obj
+<<
+/Count 2 /Kids [ 4 0 R 5 0 R ] /Type /Pages
+>>
+endobj
+9 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2155
+>>
+stream
+Gatm<_/e:"'#"/mqV^(j2BiQ[KLk5>;KarjUe5HDisRLb?pK`0^q^%;$<-s!]H2TbBTZD"lV\Hj!,&n#FME:\_gm.4"n"1lLuq?Vo5d/_8B[6LOZ0#r'tmhcqYVgV=,oTcLD)5Y45[`XlW;^SFI'-YK9_OM$!R^'[Lr@GD`WpJoeN5)74%CJI2)NYg/D1(U?0.(YdXa!hrAY4Y<Qn%m^W_=L`H[eG2pC8r$J6\3]`[7dN@$cF^3=gZD*Lt<E?If;*!T4jXOW@:?`/2lVciM/EnbEBiAOtYNT?#Pjp(Zg8qc*R:A$(.$N,SOKfE:VKPHh"T!Kap'%Kcrtos$P*;<a^f?g#N;f=J>fe_4G9QiTAjU2b2At@]eZDMEcAumCrl2&Z1^aOI6XNOcM;\?WX)JnFhHEpKqSlI2(]!irOam?']KM<7R@K%'QT#DokG'bWrcg1:##A%Id@hkO4!!mS,1;:Bd'TaX9\=28(k:&Y\_q-@s-0r[_R-,.?$_FLcL2>Qm.l4@;V7.+9(K/P=s`cBP)-6VL/d79O(VF7<&c+b-RA!"A>W7KEX*Y]9'W_!rmG<-h8u1gN/^QaZmdJiWP=QtJreF6XKeh&8GHaFZigS\k;ZL#?4s6r_=E1["'@F:nKG#.3j5C-[G+!t7T=K)-2*T5fsf3D+0^*6;-ODAH:rt'"+F?QH"H2RV/.0()5#AD3pU$cnB?bImhP33i1JNKH.%o^MQ7,p5bPTOMK,5G&(acu6.2ht*0Lp*RREHVSU5c1LaJ;fN/YcOn%m(h?.O?G7+&?`3W,>#F6hhQh2&?NM6XDp__M*uC`..:FiE5'He>C2a/.kK3em]j&c4[\Jn<'@p4`2cVU+jIg4/D0;:cn#dCQAtbh[8W>VI5a$r##=5#Y&)J(8^8V6kFR"^"f-.;Vm?*,b#5R^at]K#5r1SSV9Qna`PXRZ#:_X+m>=1$P-Y&sWG_6+BXCMD:n>QrWAd((5uqiC+]541Gs8QE=@*oS([rg_d1&#H2\NrOS8sNd*(@1Lp`hSFN[g*H5p%Po6sjN3Y;62V$r]A=BNc,I-Xts(E#ci;[Kg]FOOdOp`Wq?%rL*=@5`'Al(=\?OVPDMs-Sjn<B*Q;:9A2fb*l"cLi&\^[6))S5*GD&)K4l#C@q!$n<Rj@ju$CC.+H\#aRdNY_"r-R>TWG)qI@G)L=Yl1XJ&qRF9i@\^)SF2%7"]GM,*pi8A^B^K,$_BKZ0V@>]q;AK>XYfLf"5qHTdV;C*8g299s2l4>.p"Ua4^&#%BAa&mnM9B]<F/&TPf`W0(3e^Am8cl%hF;PTLC\QVq82`kHgE07t'gn8-Z]8e[tU-3B^;R<=onp!-^*oQRmR5_jNa4C=)jt`P:N'aYP^9:OaMr&el6sfS=M0bS3SANmpK![hEWkY<?ib8`,^QjVCW^,Od?H5A3H&mmKKf6#]aM4S';0:'YeMnp6FJSdCO#r^@;:KKp"^OW)oHn=,CnK!8C9UkoGnc!9:+f>VL22IeFq_IUq:"<p*<#H":(1p(jG><uFqe,jqJe)m'e$AX+lp]P)e1)SAZ[K8Ct7$PKFcVSD)5[1T\bY[R%Ss]G6:<L9t#]5485qrkVj"Lld9i>fDJ!7CcEHLY`8*$A]>r(D@q7@Yk^4u/po"rO*#D9/<4eXHJL\HRrdPef5V?Bot742('g.",c+J"&gAn=V6u,g?%7QKeHPA3$'r.O[BKu^<gpD,(Dd&#Wa]COmoW]"G^kF;S&aQj)[_cIU3>*;eRJ&W_/]\f];ZW7!)lN;&&taL>V#+W<t[u"'Zb+8`P<EVJlO]D=p)7T,^8.OQTO0q+ErS>TsqXKr]d;WoE_A"ICOmnpgrg*g?(Eo2s:0q$uR$8c:okRK5b>YcW@f/-iV;&46IZ\d=-$<HDmJ^K/gDNB.g;]k2+m_H)oE#UMDiIf:Adhp0`A36?!t;@NQ]7=qH+KXBeATl*9W9]p0ZJT9m,:+^>320jW).ks$qI[mN"Pg#\:%)_ASqbR-m\MZc>Z/B\qHd^5o+>+PA]$X]:ZA*@m"b_h;7Z&6`e#!3VI/qVu>b^Z3l+%NaU.)+t).H?0#)NLe.mB6AfPM,'_oNUi[?7>#m"1K)N]q7n<R)V\mc5O"h[c@#[!.">ESaZ,rc3<9u(:Qp%YN\idrW1,AU3-~>endstream
+endobj
+10 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 810
+>>
+stream
+Gas1\9lK#F&A@g>bc.>;P`h97j[SKiO?fWfdU%5Sc6TnZG1LiJbPq>Y-P/mM<KU+FN8Jt<IP6?q4^n<4$\5hlDB;.N,=jQqqqXF]$[>2pIU@b`c@,o6_,"gC)Kgfe^pqu:5Z0jlld+'/FX=(MH=1dW9]p@$$1]Z!KL<ZPIKE<Dkfns.K]tULQ-i%bi'HHk+W@'F!2c%1"gr"IZ(kXLpAr2c$[AaPapM+.8K5H.Et"q'ah8G_$Bd>uj9Kep.SEUh[V$tZ,d"S/H[J>_990Y"P*m=O=JJ;sppQL*rOM+>M*h-@"U*2hc':XF7?38cM(N<P/PS600B(l.M8fj[':;dcAjA`QZ3IU=;%f^73B$LcW`@J)Rts55++8\kD-,f_B2VQQc0+?Bkia[J3@U?[U8X=7c,))K#W/-6#-Tp_E/7.t],H0r);d>j7U(46)s.&=POqF=[a@V)fWcH7[3Vi>rM9H]T4fhD"I=WQT["N>B:7[7;FOY.^m!?[7/3V'cBaDf`G]K[9?FOikSE3'*=)Rj\h^X).VLG*c4X'l%[TS8NuH*00D(bRZsOdEF7j_'fX<j_&#7MP\ta4$m#Rgo)iaa(+Z]2Md?1p0c"#8C_&L!RY'<>%m'd&5i>2fWc3"]-*K[$TVj:TSQu_]MR4DXirB=PkC>t<MlG.0LNF8Rlm8+-!#Dq=e*/kC8O5/nr_a1'j,>FrFF3"bq!AMULn6V=N;ZB%8.BljagG0"=X*;^;Ki0\"XsI"l7CIcl0hGrIGmcr!%FuC8^ET3!B'!GI)^@&C^f9U2I$Orim\_eui]i)kEUW~>endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000073 00000 n 
+0000000114 00000 n 
+0000000221 00000 n 
+0000000333 00000 n 
+0000000526 00000 n 
+0000000720 00000 n 
+0000000788 00000 n 
+0000001071 00000 n 
+0000001136 00000 n 
+0000003382 00000 n 
+trailer
+<<
+/ID 
+[<ea2f72c796454c95f6a2233393bf04ac><ea2f72c796454c95f6a2233393bf04ac>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
-content = []
-
-# Header
-content.append(Paragraph("<b>Steve Walker</b>", styles['Title']))
-content.append(Paragraph("AI Product Strategist (in training) | Business Development & Technology Integration Specialist", styles['Body']))
-content.append(Paragraph("Arlington, VA | stevewalker@email.com | linkedin.com/in/steve-walker-b30a908a | swalker2325.github.io", styles['Body']))
-content.append(Spacer(1, 12))
-
-# Summary
-content.append(Paragraph("Professional Summary", styles['Heading']))
-summary_text = ("Versatile business professional with 10+ years of experience across finance, technology, and automotive industries. "
-                "Proven record of optimizing performance, leading sales operations, and delivering client-centered solutions that blend strategy with technology. "
-                "Currently pivoting into AI Product Strategy and Automation, leveraging a strong foundation in business analytics, CRM systems, and process design.")
-content.append(Paragraph(summary_text, styles['Body']))
-content.append(Spacer(1, 12))
-
-# Experience
-content.append(Paragraph("Experience", styles['Heading']))
-
-experience_data = [
-    ("Brand Ambassador — Porsche Arlington", "Jun 2025 – Present | Arlington, VA",
-     "Represent the Porsche brand experience, aligning luxury service standards with client-focused relationship building. "
-     "Leverage CRM systems and data insights to identify repeat and high-value clients. "
-     "Collaborate with marketing and leadership to improve lead-to-delivery workflow efficiency."),
-
-    ("Sales Representative — Waldorf Honda", "Jan 2020 – Jun 2025 | Waldorf, MD",
-     "Delivered top-tier performance in sales and customer satisfaction for a high-volume, family-owned dealership. "
-     "Introduced digital marketing and CRM automation to increase qualified leads and improve customer response times. "
-     "Coached junior reps and built repeat-business portfolio through strong communication and solution-based selling."),
-
-    ("Mortgage Banker — Quicken Loans", "Mar 2015 – Oct 2019 | Detroit, MI",
-     "Closed over $55M in loan volume while maintaining a 4.5/5 client satisfaction rating. "
-     "Trained and mentored loan officers on compliance and pipeline management. "
-     "Consulted clients on credit and financial strategies ranging from $25K–$4M."),
-
-    ("Business Analyst Intern — Quicken Loans", "Jun 2014 – Aug 2014 | Detroit, MI",
-     "Supported transition from legacy systems to upgraded enterprise software suites. "
-     "Developed SQL stored procedures, built SSRS reports, and documented software requirements under Agile and Waterfall frameworks.")
-]
-
-for role, dates, desc in experience_data:
-    content.append(Paragraph(f"<b>{role}</b>", styles['Body']))
-    content.append(Paragraph(dates, styles['Body']))
-    content.append(Paragraph(desc, styles['Body']))
-    content.append(Spacer(1, 6))
-
-# Education
-content.append(Spacer(1, 6))
-content.append(Paragraph("Education", styles['Heading']))
-content.append(Paragraph("<b>Lynn University — Boca Raton, FL</b>", styles['Body']))
-content.append(Paragraph("Bachelor of Business Administration (B.B.A.), Business Administration and Management | 2010 – 2014", styles['Body']))
-
-# Certifications
-content.append(Spacer(1, 6))
-content.append(Paragraph("Certifications", styles['Heading']))
-certs = [
-    "IBM Generative AI: Introduction and Applications (Issued Oct 2025)",
-    "IBM Generative AI: Prompt Engineering Basics (Issued Oct 2025)",
-    "IBM Introduction to Artificial Intelligence (AI) (Issued Oct 2025)",
-    "IBM Generative AI Engineering Professional Certificate (Expected Jan 2025)"
-]
-for cert in certs:
-    content.append(Paragraph(f"• {cert}", styles['Body']))
-
-# Skills
-content.append(Spacer(1, 6))
-content.append(Paragraph("Core Skills", styles['Heading']))
-skills_text = ("AI & Tech Literacy: Generative AI, Prompt Engineering, Automation Strategy, SQL Fundamentals, Data Analysis<br/>"
-               "Business Strategy: Product Development, Market Research, Process Optimization, Business Intelligence<br/>"
-               "Sales & CRM Expertise: Customer Relationship Management, Consultative Selling, Lead Generation, Client Retention<br/>"
-               "Communication & Leadership: Public Speaking, Coaching, Cross-Functional Collaboration, Stakeholder Management<br/>"
-               "Tools: Microsoft Office Suite, Google Workspace, CRM Platforms, SSRS, WordPress, Social Media Marketing")
-content.append(Paragraph(skills_text, styles['Body']))
-
-# Project
-content.append(Spacer(1, 6))
-content.append(Paragraph("Projects", styles['Heading']))
-content.append(Paragraph("<b>AI Product Assistant (In Progress)</b> — Portfolio Project", styles['Body']))
-content.append(Paragraph("Developing a generative-AI powered assistant that converts plain-language business prompts into structured product briefs and strategies.", styles['Body']))
-
-doc.build(content)
-resume_filename
+/Info 7 0 R
+/Root 6 0 R
+/Size 11
+>>
+startxref
+4283
+%%EOF
